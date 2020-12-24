@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="clearfix">
+    <a class="btn btn-outline-secondary btn-sm left mr-2" href="{% url 'Cal:calendar' %}?{{ previous_month }}"> << Poprzedni miesiąc </a>
+    <a class="btn btn-outline-secondary btn-sm left mr-2" href="{% url 'Cal:calendar' %}?{{ next_month }} "> Następny miesiąc >> </a>
+    <a class="btn btn-outline-success btn-sm left mr-2" href="#"> Nowe wydarzenie </a>
+    <a class="btn btn-outline-primary btn-sm right" href="{% url 'logout' %}"> Wyloguj się </a>
+    <span class="right m-2" style="font-size: 20px;">Witaj, {{ request.user }}</span>
+</div>
+<div>
+    {{ calendar }}
+</div>
+{% endblock %}
