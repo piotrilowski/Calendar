@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Cal.views import events
+
+from . import views
+from .views import user_login, user_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
     path('', include('Cal.urls')),
+    path('event/new/', views.addevent, name='addevent'),
 ]
