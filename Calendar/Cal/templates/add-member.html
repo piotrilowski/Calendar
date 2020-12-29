@@ -1,0 +1,20 @@
+{% extends 'base_ex.html' %}
+
+{% block title %}
+Dodaj członka do wydarzenia
+{% endblock %}
+
+{% block content %}
+<div class="clearfix">
+  <a class="btn btn-primary left" href="{% url 'Cal:calendar' %}"> Powrót </a>
+</div>
+<h1 style="text-align: center; font-size: 2em;">Dodaj członków do wydarzenia</h1>
+  <form method="post">
+    {% csrf_token %}
+    <table class="form form-table">
+      {{ form }}
+    </table>
+    <button type="submit" class="btn right btn-success"> Zatwierdź </button>
+  </form>
+
+{% endblock %}

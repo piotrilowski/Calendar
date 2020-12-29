@@ -1,0 +1,15 @@
+{% extends 'base_ex.html' %}
+
+{% block title %}
+Usuń wydarzenie
+{% endblock %}
+
+{% block content %}
+<div class="del">
+    <h1>Usuwanie wydarzenia</h1>
+    <form action="" method="post">{% csrf_token %}
+        <p>Czy na pewno chcesz usunąć to wydarzenie?</p>
+        <button class="btn btn-danger ml-2" type="submit">Zatwierdź</button>
+    </form>
+</div>
+{% endblock content %}
